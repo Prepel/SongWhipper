@@ -1,0 +1,35 @@
+{
+    "capabilities": {
+        "hipchatApiConsumer": {
+            "fromName": "Songwhip",
+            "scopes": [
+                "send_notification"
+            ]
+        },
+        "installable": {
+            "allowGlobal": true,
+            "allowRoom": true,
+            "callbackUrl": "${host}/installed",
+            "uninstalledUrl": "${host}/uninstalled"
+        },
+        "webhook": [
+            {
+                "url": "${host}/whipsong",
+                "event": "room_message",
+                "pattern": ".*",
+                "name": "Songwhip",
+                "authentication": "jwt"
+            }
+        ],
+        "configurable": {
+            "url": "${host}/configure"
+        }
+    },
+    "description": "Songwhip",
+    "key": "sample-hipchat-addon",
+    "links": {
+        "homepage": "${host}",
+        "self": "${host}/capabilities.json"
+    },
+    "name": "Songwhip"
+}
